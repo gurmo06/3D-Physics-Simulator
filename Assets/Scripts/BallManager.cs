@@ -112,7 +112,7 @@ public class BallManager : MonoBehaviour
         foreach (GameObject ball in balls)
         {
             Rigidbody rb = ball.GetComponent<Rigidbody>();
-            avgBallV += rb.velocity.magnitude;
+            avgBallV += rb.linearVelocity.magnitude;
         }
         totalM = avgBallV * balls[0].GetComponent<Rigidbody>().mass; // Calculate the total system momentum
         sysMomentumText.text = "Total System Momentum: " + Math.Round(totalM, 3) + " kg*m/s"; // Display the momentum

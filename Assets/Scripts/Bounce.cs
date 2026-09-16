@@ -48,7 +48,7 @@ public class Bounce : MonoBehaviour
         if (collision.collider.CompareTag("Surface") && !Input.GetKey(KeyCode.T))
         {
             // Calculate the direction of the bounce using the collision normal
-            Vector3 bounceDirection = Vector3.Reflect(rb.velocity, collision.GetContact(0).normal);
+            Vector3 bounceDirection = Vector3.Reflect(rb.linearVelocity, collision.GetContact(0).normal);
 
             // Apply a force to the object in the bounce direction
             rb.AddForce(bounceDirection * elasticityConstant * rb.mass, ForceMode.Impulse);
@@ -58,7 +58,7 @@ public class Bounce : MonoBehaviour
         else if (collision.collider.CompareTag("Sphere"))
         {
             // Calculate the direction of the bounce using the collision normal
-            Vector3 bounceDirection = Vector3.Reflect(rb.velocity, collision.GetContact(0).normal);
+            Vector3 bounceDirection = Vector3.Reflect(rb.linearVelocity, collision.GetContact(0).normal);
 
             // Apply a force to the object in the bounce direction
             rb.AddForce(bounceDirection * elasticityConstant * .1f * rb.mass, ForceMode.Impulse);
