@@ -8,6 +8,7 @@
 UserSettings/
 
 .vs/
+.vscode/
 .gradle/
 
 *.csproj
@@ -22,3 +23,5 @@ UserSettings/
 *.mdb
 *.opendb
 *.VC.db
+
+.vsconfig
